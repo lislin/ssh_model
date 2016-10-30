@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="resources/assets/css/reset.css">
+<link rel="stylesheet" href="resources/assets/css/supersized.css">
+<link rel="stylesheet" href="resources/assets/css/style.css">
+</head>
+<body>
+
+	<div class="page-container">
+		<h1>登录</h1>
+		<form action="" method="post">
+			<input id="user" type="text" name="username" class="username"
+				placeholder="用户名"> 
+				<input id="pass" type="password"
+				name="password" class="password" placeholder="密码">
+			<div class="error">
+				<span>+</span>
+			</div>
+		</form>
+		<button id="login_but">登录</button><br>
+		<button id="register_but">注册</button>
+		<div class="connect">
+			<p>Or connect with:</p>
+			<p>
+				<a class="facebook" href=""></a> <a class="twitter" href=""></a>
+			</p>
+		</div>
+	</div>
+
+	<script src="resources/assets/js/jquery-1.8.2.min.js"></script>
+	<script src="resources/assets/js/supersized.3.2.7.min.js"></script>
+	<script src="resources/assets/js/supersized-init.js"></script>
+	<script src="resources/assets/js/scripts.js"></script>
+
+<script type="text/javascript">
+$(document).ready(
+		alert("{'user':'user','pass':'pass'}");
+		$('#login_but').click(function(){ 
+			$.ajax({ 
+			type:"GET", 
+			url:"ssm/user/login", 
+			data:{upass:'user':'user','pass':'pass'}, 
+			dataType:"json", 
+			cache:false, 
+			success:function(msg){ 
+				alert(msg);
+			}, 
+			error:function(error){
+				alert(error);} 
+			}); 
+			}); 
+			}); 
+		);
+
+</script>
+</body>
+
+</html>

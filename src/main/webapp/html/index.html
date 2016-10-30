@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+</head>
+<body>
+<form>
+<table>
+<tr>
+<input type="checkbox" name="vehicle" checked="true" value="Bike">I have a bike
+</tr>
+<br>
+<tr>
+<input type="checkbox" name="vehicle" value="Car">I have a car 
+</tr>
+</table>
+</form> 
+<script type="text/javascript">
+$(document).ready(function(){
+  $("tr").click(function(){
+  if($(this).attr('checked')==true){
+	  $(this).attr('checked',false);
+  }
+  });
+});
+</script>
+</body>
+</html>

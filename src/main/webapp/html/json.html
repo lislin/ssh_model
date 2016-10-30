@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="resources/js/projectName.js"></script>
+<script type="text/javascript" src="resources/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<h3 id="test">请点击下面的按钮，通过 jQuery AJAX 改变这段文本。</h3>
+	<button id="btn1">获得外部的内容</button>
+	<a href="user/getUserById">dian</a>
+
+	<form action="" method="post">
+		<input id="user" name="user" type="text"> 
+		<input id="pass" name="pass" type="password">
+	</form>
+	<button id="login_but">登录</button>
+	<br>
+	<button id="register_but">注册</button>
+	<script>
+		$(document).ready(
+				function() {
+					$("h3").hide();
+					$("#btn1").click(
+							function() {
+								$.get(Name+"/user/getUserById",
+										function(data, status) {
+											alert(data);
+										});
+				});
+				
+				$('#login_but').click(function(){
+					$.ajax({ 
+					type:"GET", 
+					url:"http://localhost:8080/ssm/user/login", 
+					data:{upass:
+						"user:'user',pass:'pass'"
+						}, 
+					dataType:"json", 
+					success:function(msg){ 
+					}, 
+					error:function(error){
+						alert(error);} 
+					}); 
+					}); 	
+		});
+	</script>
+</body>
+</html>
